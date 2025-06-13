@@ -18,7 +18,9 @@ public class EventController {
     @GetMapping("/publish/{msg}")
     public ResponseEntity<?> publishMsg(@PathVariable String msg) {
         try {
-            kafkaMsgPublisher.sendMessageToTopic(msg);
+            for (int i=0; i<10000; i++) {
+                kafkaMsgPublisher.sendMessageToTopic(msg + i);
+            }
             return ResponseEntity.ok("Message published successfully !!");
         } catch (Exception ex) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
