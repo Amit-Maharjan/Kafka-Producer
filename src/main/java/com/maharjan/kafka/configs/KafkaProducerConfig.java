@@ -11,4 +11,9 @@ public class KafkaProducerConfig {
     public NewTopic createTopic() {
         return new NewTopic(Constants.KAFKA_TOPIC_PARTITION_5, 5, (short) 1);
     }
+
+    @Bean
+    public NewTopic createCustomerTopic() {
+        return new NewTopic(Constants.KAFKA_CUSTOMER_TOPIC, 2, (short) 1);
+    }
 }
