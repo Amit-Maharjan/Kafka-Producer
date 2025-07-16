@@ -23,6 +23,12 @@ public class KafkaMsgPublisher {
                 System.out.println("Unable to send Message=[" + message + "] due to " + ex.getMessage());
             }
         });
+
+//        kafkaTemplate.send(Constants.KAFKA_TOPIC_PARTITION_5, 0, null, "Hi");
+//        kafkaTemplate.send(Constants.KAFKA_TOPIC_PARTITION_5, 1, null, "Amit");
+//        kafkaTemplate.send(Constants.KAFKA_TOPIC_PARTITION_5, 2, null, "Welcome");
+//        kafkaTemplate.send(Constants.KAFKA_TOPIC_PARTITION_5, 3, null, "To");
+//        kafkaTemplate.send(Constants.KAFKA_TOPIC_PARTITION_5, 4, null, "MyProject");
     }
 
     public void sendCustomerToTopic(Customer customer) {
