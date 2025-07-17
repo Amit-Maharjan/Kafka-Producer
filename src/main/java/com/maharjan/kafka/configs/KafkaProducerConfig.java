@@ -27,6 +27,11 @@ public class KafkaProducerConfig {
     }
 
     @Bean
+    public NewTopic createUserTopic() {
+        return new NewTopic(Constants.KAFKA_USER_TOPIC, 5, (short) 1);
+    }
+
+    @Bean
     public Map<String, Object> producerConfigs() {
         Map<String, Object> props = new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
